@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+</head>
+<body>
+
+<h2> Counter: <span id = "count">0</span></h2>
+    <button onclick="increase()">Increment +</button>
+    <button onclick="decrease()">Decrement -</button>
+    <button onclick = "reset()">Reset</button>
+
+    <script>
+        let count =0;
+        function increase(){
+            count++;
+            document.getElementById("count").innerText=count;
+        }
+        function decrease(){
+            count--;
+            document.getElementById("count").innerText=count;
+        }
+        function reset(){
+            count=0;
+            document.getElementById("count").innerText=count;
+        }
+    </script>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<h2>Maths </h2>
+
+    <label>Value A:</label>
+    <input type="number" id="a">
+    <br><br>
+
+    <label>Value B:</label>
+    <input type="number" id="b">
+    <br><br>
+
+    <button onclick="add()">Add</button>
+    <button onclick="sub()">Subtract</button>
+    <button onclick = "multiply()">Multiply</button>
+    <button onclick = "divide()">Divide</button>
+    <button onclick="reset()">Reset</button>
+
+    <h3 id="result">Answer: </h3>
+
+
+
+    <script>
+            function add() {
+        let a = Number(document.getElementById("a").value);
+        let b = Number(document.getElementById("b").value);
+
+        let sum = a + b;
+
+        document.getElementById("result").innerHTML = sum;
+    }
+
+    function sub() {
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+
+    let sub = a - b;
+
+    document.getElementById("result").innerHTML = sub;
+}
+
+function multiply() {
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+
+    let mul= a * b;
+
+    document.getElementById("result").innerHTML = mul;
+}
+
+function divide() {
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+
+    if (b === 0) {
+        document.getElementById("result").innerHTML = "cannot divide";
+        return;
+    }
+
+    let div = a / b;
+
+    document.getElementById("result").innerHTML = div;
+}
+        function reset() {
+            document.getElementById("a").value = "";
+            document.getElementById("b").value = "";
+            document.getElementById("result").innerHTML = "Answer: ";
+        }
+    </script>
+
+    </script>
+
+
+
+
+</body>
+</html>
