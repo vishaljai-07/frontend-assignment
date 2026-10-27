@@ -1,112 +1,152 @@
 <!DOCTYPE html>
-<html lang= "en">
+<html lang="en">
+
 <head>
-    <meta charset= "UTF-8">
-    <title>Vishal Resume </title>
+    <meta charset="UTF-8">
+    <title>Vishal Resume</title>
     <style>
         body {
-    background-color: white;
-    font-family: Arial, sans-serif;
-    margin: 30px;
-    line-height: 1.6;
-}
+            background-color: white;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            line-height: 1.6;
+        }
 
-h1 {
-    color: navy;
-    font-family: "Times New Roman", serif;
-    font-size: 32px;
-    
-}
+        .photo {
+            float: right;
+            width: 140px;
+            height: 160px;
+            object-fit: cover;
+            border: 1px solid gray;
+            margin-left: 20px;
+        }
 
-h2 {
-    color: darkgreen;
-    font-size: 22px;
-    border-bottom: 1px solid gray;
-    padding-bottom: 5px;
-}
+        h1 {
+            color: navy;
+            font-family: "Times New Roman", serif;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
 
-h3 {
-    color: maroon;
-    font-size: 18px;
-}
+        .title {
+            color: #333;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
 
-p {
-    color: black;
-    font-size: 15px;
-}
+        h2 {
+            color: darkgreen;
+            font-size: 20px;
+            border-bottom: 1px solid gray;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
 
-.contact {
-    text-align: center;
-}
+        h3 {
+            color: maroon;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
 
-.details {
-    margin-left: 10px;
-}
+        p {
+            color: black;
+            font-size: 15px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
 
-hr {
-    border: 1px solid lightgray;
-}   
+        .details {
+            margin-left: 10px;
+        }
+
+        hr {
+            border: 1px solid lightgray;
+            clear: both;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
     </style>
-    <img src= "image.jpeg" align= "right" width= "250" height= "250">
-    
-
 </head>
+
 <body>
+
+    <img src="image.jpeg" alt="Vishal Profile" class="photo">
+    <h2> Counter: <span id = "count">0</span></h2>
+    <button onclick="increase()">Increment +</button>
+    <button onclick="decrease()">Decrement -</button>
+    <buton onclick = "reset()">Reset</buton>
+
     <h1>Vishal</h1>
-    <h2>B.Tech Information Technology</h2>
-    <h3>Contact : </h3>
+    <p class="title"><b>B.Tech Information Technology</b></p>
+    
+    <h3>Contact :</h3>
     <p>Phone: 9791205137 <br>
-    Email: vishaljairam@gmail.com <br>
-    Location: Chennai, Tamil Nadu </p>
-    
-    <h2>Education and Training</h2>
+       Email: vishaljairam@gmail.com <br>
+       Location: Chennai, Tamil Nadu</p>
 
-    <h3>B.Tech - Information Technology</h3>
-    <p>S.A Engineering College <br>
-    2023 - Present <br>
-    CGPA: 7.68 up to Semester VI</p>
+    <hr>
 
-    <h3>Higher Secondary Education</h3>
-   <p> Shri Krishnaswamy Matric Higher Secondary School <br>
-    2022 - 2023 <br>
-    Percentage: 60% </p>
+    <h2>Education</h2>
+    <div class="details">
+        <h3>B.Tech - Information Technology</h3>
+        <p>S.A Engineering College <br>
+           2023 - Present <br>
+           CGPA: 7.68 up to Semester VI</p>
 
-    
-     <h2>Profile</h2>
-    <p>
-        Motivated B.Tech Information Technology student with internship
-        experience. Skilled in Python, Linux, HTML, CSS and networking
-        fundamentals. Interested in learning new technologies and
-        improving problem-solving and teamwork skills.
-    </p>
+        <h3>Higher Secondary Education</h3>
+        <p>Shri Krishnaswamy Matric Higher Secondary School <br>
+           2022 - 2023 <br>
+           Percentage: 60%</p>
+    </div>
 
-    <h2> Intenship Experinece </h2>
+    <h2>Profile</h2>
+    <div class="details">
+        <p>
+            Motivated B.Tech Information Technology student with internship
+            experience. Skilled in Python, Linux, HTML, CSS and networking
+            fundamentals. Interested in learning new technologies and
+            improving problem-solving and teamwork skills.
+        </p>
+    </div>
 
-    <h3>Cyber Security Intern </h3>
-       <p>Monitored and analyzed security events using SIEM tools. <br>
-       Performed basic vulnerability assessment.<br> </p>
-    
-       <h2> Skills </h2>
-    <p>Python <br> 
-    Linux <br> 
-    Networking Fundamentals <br> </p>
+    <h2>Internship Experience</h2>
+    <div class="details">
+        <h3>Cyber Security Intern</h3>
+        <p>Monitored and analyzed security events using SIEM tools. <br>
+           Performed basic vulnerability assessment.</p>
+    </div>
 
-    <h2> Achievements </h2>
-    <p> MAGNUS25 - Paper Presentation Participant <br> 
-     Agentic AI Master Class - Workshop Participant <br></p>
+    <h2>Skills</h2>
+    <div class="details">
+        <p>• Python <br>
+           • Linux <br>
+           • Networking Fundamentals</p>
+    </div>
+
+    <h2>Achievements</h2>
+    <div class="details">
+        <p>MAGNUS25 - Paper Presentation Participant <br>
+           • Agentic AI Master Class - Workshop Participant</p>
+    </div>
 
     <h2>Languages</h2>
-    <p> English<br>
-        Tamil<br>
-        Hindi<br></p>
+    <div class="details">
+        <p>• English <br>
+           • Tamil <br>
+           • Hindi</p>
+    </div>
 
-    <h2> Declaration </h2>
-    <p> I hereby declare that the information provided above is true
-        and accurate to the best of my knowledge. I am committed to
-        maintaining professionalism, integrity and continuous learning.
+    <h2>Declaration</h2>
+    <div class="details">
+        <p>
+            I hereby declare that the information provided above is true
+            and accurate to the best of my knowledge. I am committed to
+            maintaining professionalism, integrity and continuous learning.
         </p>
-
-
+    </div>
 
 </body>
+
 </html>
