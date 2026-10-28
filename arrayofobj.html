@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal Portfolio</title>
+</head>
+
+<body>
+
+    <h1>Welcome to My Portfolio</h1>
+    <h3>Hi, I'm <span id="name"></span></h3>
+    <p id="profile"></p>
+
+    <h2>Education</h2>
+    <ul id="education"></ul>
+
+    <h2>Internship Experience</h2>
+    <ul id="experience"></ul>
+
+    <h2>Skills</h2>
+    <ul id="skills"></ul>
+
+    <h2>Achievements</h2>
+    <ul id="awards"></ul>
+
+    <h2>Languages</h2>
+    <ul id="languages"></ul>
+
+    <h2>Contact</h2>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Email: <a id="email"></a></p>
+    <p>Location: <span id="location"></span></p>
+
+    <h2>Declaration</h2>
+    <p id="declaration"></p>
+
+    <script>
+        const userData = [{
+            name: "Vishal",
+            age: "20",
+            email: "vishaljairam@gmail.com",
+            phone: "9791205137",
+            location: "Chennai, Tamil Nadu",
+            degree: "B.Tech Information Technology",
+
+            educationDetails: [
+                {
+                    name: "S.A. Engineering College",
+                    degree: "B.Tech Information Technology",
+                    year: "2023 - Present",
+                    cgpa: "7.68 up to Semester VI"
+                },
+                {
+                    name: "Shri Krishnaswamy Matric Higher Secondary School",
+                    degree: "Higher Secondary Education",
+                    year: "2022 - 2023",
+                    percentage: "60%"
+                }
+            ],
+
+            profile: "Motivated B.Tech Information Technology student with internship experience. Skilled in Python, Linux, HTML, CSS and networking fundamentals. Interested in learning new technologies and improving problem-solving and teamwork skills.",
+
+            internshipDetails: [
+                {
+                    role: "Cyber Security Intern",
+                    description: "Monitored and analyzed security events using SIEM tools. Performed basic vulnerability assessment."
+                }
+            ],
+
+            skills: [
+                "Python",
+                "Linux",
+                "Networking Fundamentals"
+            ],
+
+            awards: [
+                "MAGNUS25 - Paper Presentation Participant",
+                "Agentic AI Master Class - Workshop Participant"
+            ],
+
+            languages: [
+                "English",
+                "Tamil",
+                "Hindi"
+            ],
+
+            declaration: "I hereby declare that the information provided above is true and accurate to the best of my knowledge."
+        }];
+
+        const nameElem = document.getElementById("name");
+        const profileElem = document.getElementById("profile");
+        const educationElem = document.getElementById("education");
+        const experienceElem = document.getElementById("experience");
+        const skillsElem = document.getElementById("skills");
+        const awardsElem = document.getElementById("awards");
+        const languagesElem = document.getElementById("languages");
+        const phoneElem = document.getElementById("phone");
+        const emailElem = document.getElementById("email");
+        const locationElem = document.getElementById("location");
+        const declarationElem = document.getElementById("declaration");
+
+        nameElem.innerText = userData[0].name;
+
+profileElem.innerText = userData[0].profile;
+
+const data = userData[0];
+
+document.getElementById("name").innerText = data.name;
+document.getElementById("profile").innerText = data.profile;
+
+document.getElementById("education").innerHTML = `
+    <li>${data.educationDetails[0].degree}</li>
+    <li>${data.educationDetails[1].degree}</li>`;
+
+document.getElementById("experience").innerHTML =
+    `<li>${data.internshipDetails[0].role}</li>`;
+
+document.getElementById("skills").innerHTML =
+    `<li>${data.skills.join("</li><li>")}</li>`;
+
+document.getElementById("awards").innerHTML =
+    `<li>${data.awards.join("</li><li>")}</li>`;
+
+document.getElementById("languages").innerHTML =
+    `<li>${data.languages.join("</li><li>")}</li>`;
+
+document.getElementById("phone").innerText = data.phone;
+document.getElementById("email").innerText = data.email;
+document.getElementById("location").innerText = data.location;
+document.getElementById("declaration").innerText = data.declaration;
+    </script>
+
+</body>
+
+</html>

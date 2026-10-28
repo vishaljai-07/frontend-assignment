@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal Resume</title>
+
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            line-height: 1.6;
+        }
+
+        .photo {
+            float: right;
+            width: 140px;
+            height: 160px;
+            object-fit: cover;
+            border: 1px solid gray;
+            margin-left: 20px;
+        }
+
+        h1 {
+            color: navy;
+            font-family: "Times New Roman", serif;
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            color: #333;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: darkgreen;
+            font-size: 20px;
+            border-bottom: 1px solid gray;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+
+        h3 {
+            color: maroon;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+
+        p {
+            color: black;
+            font-size: 15px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            margin-left: 10px;
+        }
+
+        hr {
+            border: 1px solid lightgray;
+            clear: both;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+     <img src="image.jpeg" alt="Vishal Profile" class="photo">
+
+    <h1 id="name"></h1>
+    <h3 id="degree"></h3>
+
+    <h2>Contact</h2>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Email: <a id="email"></a></p>
+    <p>Location: <span id="location"></span></p>
+
+    <hr>
+
+    <h2>Profile</h2>
+    <p id="profile"></p>
+
+    <hr>
+
+    <h2>Education</h2>
+    <ul id="education"></ul>
+
+    <hr>
+
+    <h2>Internship Experience</h2>
+    <ul id="experience"></ul>
+
+    <hr>
+
+    <h2>Skills</h2>
+    <ul id="skills"></ul>
+
+    <hr>
+
+    <h2>Achievements</h2>
+    <ul id="awards"></ul>
+
+    <hr>
+
+    <h2>Languages</h2>
+    <ul id="languages"></ul>
+
+    <hr>
+
+    <h2>Declaration</h2>
+    <p id="declaration"></p>
+
+    <script>
+        const userData = [{
+            name: "Vishal",
+            degree: "B.Tech Information Technology",
+            email: "vishaljairam@gmail.com",
+            phone: "9791205137",
+            location: "Chennai, Tamil Nadu",
+
+            profile: "Motivated B.Tech Information Technology student with internship experience. Skilled in Python, Linux, HTML, CSS and networking fundamentals. Interested in learning new technologies and improving problem-solving and teamwork skills.",
+
+            educationDetails: [
+                {
+                    name: "S.A. Engineering College",
+                    degree: "B.Tech Information Technology",
+                    year: "2023 - Present",
+                    cgpa: "7.68 up to Semester VI"
+                },
+                {
+                    name: "Shri Krishnaswamy Matric Higher Secondary School",
+                    degree: "Higher Secondary Education",
+                    year: "2022 - 2023",
+                    percentage: "60%"
+                }
+            ],
+
+            internshipDetails: [
+                {
+                    role: "Cyber Security Intern",
+                    description: "Monitored and analyzed security events using SIEM tools. Performed basic vulnerability assessment."
+                }
+            ],
+
+            skills: ["Python", "Linux", "Networking Fundamentals"],
+
+            awards: [
+                "MAGNUS25 - Paper Presentation Participant",
+                "Agentic AI Master Class - Workshop Participant"
+            ],
+
+            languages: ["English", "Tamil", "Hindi"],
+
+            declaration: "I hereby declare that the information provided above is true and accurate to the best of my knowledge. I am committed to maintaining professionalism, integrity and continuous learning."
+        }];
+
+       
+
+       const data = userData[0];
+
+document.getElementById("name").innerText = data.name;
+document.getElementById("degree").innerText = data.degree;
+document.getElementById("phone").innerText = data.phone;
+document.getElementById("email").innerText = data.email;
+document.getElementById("email").href = "mailto:" + data.email;
+document.getElementById("location").innerText = data.location;
+document.getElementById("profile").innerText = data.profile;
+
+document.getElementById("education").innerHTML =
+    `<li>${data.educationDetails[0].degree} - ${data.educationDetails[0].name}</li>
+     <li>${data.educationDetails[1].degree} - ${data.educationDetails[1].name}</li>`;
+
+document.getElementById("experience").innerHTML =
+    `<li>${data.internshipDetails[0].role}</li>
+     <li>${data.internshipDetails[0].description}</li>`;
+
+document.getElementById("skills").innerHTML =
+    `<li>${data.skills.join("</li><li>")}</li>`;
+
+document.getElementById("awards").innerHTML =
+    `<li>${data.awards.join("</li><li>")}</li>`;
+
+document.getElementById("languages").innerHTML =
+    `<li>${data.languages.join("</li><li>")}</li>`;
+
+document.getElementById("declaration").innerText = data.declaration;
+
+</script>
+
+</body>
+
+</html>
