@@ -100,24 +100,14 @@
             text-decoration: underline;
         }
 
-        
-            .photo {
-                width: 105px;
-                height: 125px;
-            }
+        hr {
+            border: none;
+            border-top: 1px solid #dbe3ec;
+            clear: both;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
 
-            h1 {
-                font-size: 27px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            p,
-            li {
-                font-size: 14px;
-            }
         
     </style>
 </head>
@@ -201,14 +191,22 @@
                 }
             ],
 
-            skills: ["Python", "Linux", "Networking Fundamentals"],
+            skills: [
+                "Python",
+                "Linux",
+                "Networking Fundamentals"
+            ],
 
             awards: [
                 "MAGNUS25 - Paper Presentation Participant",
                 "Agentic AI Master Class - Workshop Participant"
             ],
 
-            languages: ["English", "Tamil", "Hindi"],
+            languages: [
+                "English",
+                "Tamil",
+                "Hindi"
+            ],
 
             declaration: "I hereby declare that the information provided above is true and accurate to the best of my knowledge. I am committed to maintaining professionalism, integrity and continuous learning."
         }];
@@ -225,28 +223,13 @@
         document.getElementById("location").innerText = data.location;
         document.getElementById("profile").innerText = data.profile;
 
-        document.getElementById("education").innerHTML = `
-            <li>
-                <strong>${data.educationDetails[0].degree}</strong><br>
-                ${data.educationDetails[0].name}<br>
-                ${data.educationDetails[0].year}<br>
-                CGPA: ${data.educationDetails[0].cgpa}
-            </li>
+        document.getElementById("education").innerHTML =
+            `<li>${data.educationDetails[0].degree} - ${data.educationDetails[0].name}</li>
+             <li>${data.educationDetails[1].degree} - ${data.educationDetails[1].name}</li>`;
 
-            <li>
-                <strong>${data.educationDetails[1].degree}</strong><br>
-                ${data.educationDetails[1].name}<br>
-                ${data.educationDetails[1].year}<br>
-                Percentage: ${data.educationDetails[1].percentage}
-            </li>
-        `;
-
-        document.getElementById("experience").innerHTML = `
-            <li>
-                <strong>${data.internshipDetails[0].role}</strong><br>
-                ${data.internshipDetails[0].description}
-            </li>
-        `;
+        document.getElementById("experience").innerHTML =
+            `<li>${data.internshipDetails[0].role}</li>
+             <li>${data.internshipDetails[0].description}</li>`;
 
         document.getElementById("skills").innerHTML =
             `<li>${data.skills.join("</li><li>")}</li>`;
