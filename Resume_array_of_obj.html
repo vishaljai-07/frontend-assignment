@@ -7,77 +7,124 @@
     <title>Vishal Resume</title>
 
     <style>
+        html {
+            background-color: #f1f5f9;
+        }
+
         body {
             background-color: white;
             font-family: Arial, sans-serif;
+            color: #334155;
             max-width: 800px;
             margin: 30px auto;
+            padding: 35px 40px;
             line-height: 1.6;
+            box-sizing: border-box;
+            border-top: 6px solid #17365d;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(23, 54, 93, 0.10);
         }
 
         .photo {
             float: right;
-            width: 140px;
-            height: 160px;
+            width: 105px;
+            height: 125px;
             object-fit: cover;
-            border: 1px solid gray;
-            margin-left: 20px;
+            object-position: center;
+            border: 3px solid #dbeafe;
+            border-radius: 10px;
+            margin: 0 0 10px 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
         }
 
         h1 {
-            color: navy;
+            color: #17365d;
             font-family: "Times New Roman", serif;
-            font-size: 32px;
+            font-size: 27px;
+            margin-top: 0;
             margin-bottom: 5px;
+            overflow-wrap: anywhere;
         }
 
-        .title {
-            color: #333;
+        #degree {
+            color: #0f766e;
             font-size: 18px;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         h2 {
-            color: darkgreen;
-            font-size: 20px;
-            border-bottom: 1px solid gray;
-            padding-bottom: 5px;
+            color: #17365d;
+            font-size: 18px;
+            border-bottom: 2px solid #cbdfe8;
+            border-left: 4px solid #0f766e;
+            padding: 0 0 6px 10px;
             margin-top: 25px;
+            margin-bottom: 12px;
         }
 
         h3 {
-            color: maroon;
+            color: #0f766e;
             font-size: 16px;
             margin-bottom: 5px;
         }
 
-
         p {
-            color: black;
-            font-size: 15px;
+            color: #334155;
+            font-size: 14px;
             margin-top: 5px;
             margin-bottom: 10px;
+            overflow-wrap: anywhere;
         }
 
-        .details {
-            margin-left: 10px;
-        }
-
-        hr {
-            border: 1px solid lightgray;
-            clear: both;
-            margin-top: 15px;
+        ul {
+            padding-left: 25px;
+            margin-top: 8px;
             margin-bottom: 15px;
         }
+
+        li {
+            padding-left: 3px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #0f766e;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        a:hover {
+            color: #17365d;
+            text-decoration: underline;
+        }
+
+        
+            .photo {
+                width: 105px;
+                height: 125px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p,
+            li {
+                font-size: 14px;
+            }
+        
     </style>
-
-
-
 </head>
 
 <body>
-     <img src="image.jpeg" alt="Vishal Profile" class="photo">
+
+    <img src="image.jpeg" alt="Vishal Profile" class="photo">
 
     <h1 id="name"></h1>
     <h3 id="degree"></h3>
@@ -166,38 +213,52 @@
             declaration: "I hereby declare that the information provided above is true and accurate to the best of my knowledge. I am committed to maintaining professionalism, integrity and continuous learning."
         }];
 
-       
+        const data = userData[0];
 
-       const data = userData[0];
+        document.getElementById("name").innerText = data.name;
+        document.getElementById("degree").innerText = data.degree;
+        document.getElementById("phone").innerText = data.phone;
 
-document.getElementById("name").innerText = data.name;
-document.getElementById("degree").innerText = data.degree;
-document.getElementById("phone").innerText = data.phone;
-document.getElementById("email").innerText = data.email;
-document.getElementById("email").href = "mailto:" + data.email;
-document.getElementById("location").innerText = data.location;
-document.getElementById("profile").innerText = data.profile;
+        document.getElementById("email").innerText = data.email;
+        document.getElementById("email").href = "mailto:" + data.email;
 
-document.getElementById("education").innerHTML =
-    `<li>${data.educationDetails[0].degree} - ${data.educationDetails[0].name}</li>
-     <li>${data.educationDetails[1].degree} - ${data.educationDetails[1].name}</li>`;
+        document.getElementById("location").innerText = data.location;
+        document.getElementById("profile").innerText = data.profile;
 
-document.getElementById("experience").innerHTML =
-    `<li>${data.internshipDetails[0].role}</li>
-     <li>${data.internshipDetails[0].description}</li>`;
+        document.getElementById("education").innerHTML = `
+            <li>
+                <strong>${data.educationDetails[0].degree}</strong><br>
+                ${data.educationDetails[0].name}<br>
+                ${data.educationDetails[0].year}<br>
+                CGPA: ${data.educationDetails[0].cgpa}
+            </li>
 
-document.getElementById("skills").innerHTML =
-    `<li>${data.skills.join("</li><li>")}</li>`;
+            <li>
+                <strong>${data.educationDetails[1].degree}</strong><br>
+                ${data.educationDetails[1].name}<br>
+                ${data.educationDetails[1].year}<br>
+                Percentage: ${data.educationDetails[1].percentage}
+            </li>
+        `;
 
-document.getElementById("awards").innerHTML =
-    `<li>${data.awards.join("</li><li>")}</li>`;
+        document.getElementById("experience").innerHTML = `
+            <li>
+                <strong>${data.internshipDetails[0].role}</strong><br>
+                ${data.internshipDetails[0].description}
+            </li>
+        `;
 
-document.getElementById("languages").innerHTML =
-    `<li>${data.languages.join("</li><li>")}</li>`;
+        document.getElementById("skills").innerHTML =
+            `<li>${data.skills.join("</li><li>")}</li>`;
 
-document.getElementById("declaration").innerText = data.declaration;
+        document.getElementById("awards").innerHTML =
+            `<li>${data.awards.join("</li><li>")}</li>`;
 
-</script>
+        document.getElementById("languages").innerHTML =
+            `<li>${data.languages.join("</li><li>")}</li>`;
+
+        document.getElementById("declaration").innerText = data.declaration;
+    </script>
 
 </body>
 
