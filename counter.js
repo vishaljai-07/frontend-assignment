@@ -50,7 +50,8 @@
 // let name = ["Alice", "Bob", "Charlie", "David", "Eve"];
 //---------------------------------------------------------------------------------------------------
 
-//map function 
+//map function  set of arrra of stings is used to print the state one by one by map 
+
 
 // const newName = name.map((name, index) => {
 //     return `Index of this name ${name} = ${index}`;
@@ -59,7 +60,9 @@
 // console.log(newName);
 // console.log(name);
 
-//Filter method where it used to filter with the function that has given 
+//Filter method where it used to filter with the function that has given  returnn new array , 
+//existing la modify agum incase new condiiton kudutha 
+
 
 // let name = [1,2,3,4,5,6]
 
@@ -104,3 +107,52 @@
 // console.log(print) 
 
 
+// const items = ['pen','book','bag'];
+// items.forEach((items,i) => {
+//     console.log(`${i} : ${items}`)
+// });
+
+// let total = 0;
+// [5,10,15].forEach(n => total+=n)
+// console.log(total)
+
+//some operator OR operator this or that 
+//every operator is AND operator elamey satified ana than true or false varum 
+
+// const ages=['16','25','34'];
+// console.log(ages.some(a=> a<18));
+// console.log(ages.every(a=> a>18));
+// console.log(ages.every(a=>a>10));
+
+// console.log([].some(a=> a>0));
+// console.log([].every(a=> a>0));
+
+// onst pets = ['cat', 'dogs', 'cat', NaN];
+// console.log(pets.indexOf('cat'));
+// console.log(pets.indexOf('cat', 1));
+// console.log(pets.indexOf('fox'));
+// console.log(pets.includes('dogs'));
+// console.log(pets.includes(NaN));
+// console.log(pets.indexOf(NaN));
+
+// const n = [1,205,502,101,100,59];
+// console.log([...n].sort());
+// console.log([...n].sort((a,b) => a-b));
+// console.log([...n].sort((a,b) => b-a));
+
+
+// const n = [7,100,1000,59,1];
+// console.log([...n].sort());
+
+// const name = ['zara','arun','Bala']
+// name.sort((a,b)=> a.localeCompare(b));
+// console.log(name)
+
+// let a = [1,2,3,4,5]
+// const b = a.pop(3,4)
+// console.log(a)
+// console.log(b) 
+
+// doubt kekanum but 100% confirm pannalaam
+
+//spice and slice theriyala 
